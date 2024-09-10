@@ -11,7 +11,7 @@ class Animal: #Classe Pai, engloba todos os animais
         Animal.num_animais +=1 
 
     def comer (self):
-        print(f"O animal {self.nome} está comendAAAAAAAAAAAAAAAAAAAAAAA") 
+        print(f"O animal {self.nome} está comendo") 
 
     def dormir(self):
         print(f"O animal {self.nome} está dormindo")
