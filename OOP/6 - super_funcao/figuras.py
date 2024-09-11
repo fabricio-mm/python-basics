@@ -16,6 +16,6 @@ basicamente o que nós fizemos foi extender a funcionalidade do método da class
 '''
 
 '''
- o método super te dá segurança quando não for criar classes abstratas, ele permite que você pegue atributos da classe pai e use nas classes filhas
+ o método super() te dá segurança quando não for criar classes abstratas, ele permite que você pegue atributos da classe pai e use nas classes filhas
  obrigatoriamente quando for instanciá-las caso tenham algum dado em comum.
 '''
