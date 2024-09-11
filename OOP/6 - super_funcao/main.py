@@ -1,42 +1,21 @@
-# super() = função usada em uma classe filha para chamar métodos de uma classe pai (superclasse).
-#       Permite você extender as funcionalidade de uma herença de métodos
+from figuras import Figuras, Circulo, Quadrado, Triangulo
 
-class Figuras:
-    def __init__(self, cor, preenchido): #Reparem que esse construtor tem dois atributos
-        self.cor = cor
-        self.preenchido = preenchido
-    
-    def descrever(self):
-        print(f'Essa forma é {self.cor} e {'preenchida' if self.preenchido else 'não preenchida'}')
- 
+circulo = Circulo(cor='Azul', preenchido=True, radius=5) #Voce pode instaciar dessa maneira para melhor legibilidade
+quadrado = Quadrado(cor='Verde', preenchido=False, largura=8)
+triangulo = Triangulo(cor='Roxo', preenchido=True, largura=8, altura=7)
 
-class Circulo(Figuras): #Criando a classe circulo eu quis por nela também o atributo cor e preenchido
-    def __init__(self, cor, preenchido, radius):
-        super().__init__(cor, preenchido) # Eu consigo por essa sintaxe, passando o construtor da minha classe Figuras por meio do método super()
-                                          # Não sendo necessário declarar as variáveis com o self todas de novo em cada classe
-        self.radius = radius
+circulo.descrever()
+print()
+quadrado.descrever()
+print()
+triangulo.descrever()
 
-    def descrever(self):
-        print(f'Isso é um circulo com area de {3.14 * self.radius * self.radius}cm^2')
-        super().descrever() #Isso serve para puxar também o método da classe pai ou superclasse, esse termo também pode ser utilizado quando se refere a classe Pai
+'''
+Repare que vai ser usado o método da classe filha e da classe pai ao mesmo tempo
+basicamente o que nós fizemos foi extender a funcionalidade do método da classe filha com o da classe pai
+'''
 
-
-class Quadrado(Figuras):
-    def __init__(self, cor, preenchido, largura):
-        super().__init__(cor, preenchido)
-        self.largura = largura
-
-    def descrever(self):
-        print(f'Isso é um Quadrado com area de {self.largura * self.largura}cm^2')
-        super().descrever()
-
-
-class Triangulo(Figuras):
-    def __init__(self, cor, preenchido, altura, largura):
-        super().__init__(cor, preenchido)
-        self.altura = altura
-        self.largura = largura
-
-    def descrever(self):
-        print(f'Isso é um triangulo com area de {self.largura * self.altura / 2}cm^2')
-        super().descrever()
+'''
+ o método super() te dá segurança quando não for criar classes abstratas, ele permite que você pegue atributos da classe pai e use nas classes filhas
+ obrigatoriamente quando for instanciá-las caso tenham algum dado em comum.
+'''
