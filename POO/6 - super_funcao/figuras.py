@@ -1,5 +1,5 @@
 # super() = função usada em uma classe filha para chamar métodos de uma classe pai (superclasse).
-#       Permite você extender as funcionalidade de uma herença de métodos
+#           Permite você extender as funcionalidade de uma herença de métodos
 
 class Figuras:
     def __init__(self, cor, preenchido): #Reparem que esse construtor tem dois atributos
